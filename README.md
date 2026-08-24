@@ -24,3 +24,7 @@ La richiesta arrivata a questa sessione partiva dalla premessa che il repo non a
 4. Prova finale sul sito: `curl https://puliderma.github.io/` ha restituito codice 000 (curl 56, «CONNECT tunnel failed, response 403»): la network policy di questo ambiente non arriva a github.io, come gia' il 17/08. La verifica online della home (presenza della parola «Puliderma») resta quindi non eseguibile da qui e va fatta da un browser normale.
 
 In sintesi: nessuna azione di attivazione era necessaria ne' possibile; lo stato accertato e' «Pages attivo, ultimo deployment riuscito il 17/08/2026 sul commit corrente». Se il sito desse davvero 404 da un browser, il problema andrebbe cercato altrove (propagazione, dominio, cache), non nell'attivazione di Pages.
+
+---
+
+Esito del 2026-08-24 20:02 UTC (immagini D28): pubblicazione NON eseguita, download bloccato dalla rete. Comando provato (due tentativi): curl -sS -o pacchetto.zip "https://d2ol7oe51mr4n9.cloudfront.net/user_3FeDqVrrckQdXDyAd8vykaJ4L1N/bd859c59-27bd-4553-93ae-bdafef3f8edf.zip" — errore esatto: curl 56, «CONNECT tunnel failed, response 403» (il proxy dell'ambiente nega la connessione verso d2ol7oe51mr4n9.cloudfront.net: «policy denial»). Nessun file scaricato, impronta sha256 non verificabile, cartella immagini/ non creata. Da riprovare da un ambiente con accesso di rete a quel dominio CloudFront, oppure abilitandolo nella network policy.
