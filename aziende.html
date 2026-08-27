@@ -14,7 +14,7 @@
      OGNI pagina, visibile senza scorrere. Non toglierla, non spostarla in fondo. -->
 <div class="fascia-indipendente">
   <div class="contenitore">
-    <strong>Sito indipendente.</strong> Questo è il sito di un Incaricato Indipendente Chogan alla vendita
+    <strong>Sito indipendente.</strong> Questo è il negozio online di un Incaricato Indipendente Chogan alla vendita
     diretta a domicilio. <strong>Non è il sito ufficiale di Chogan Group S.p.A.</strong> —
     quello si trova su <a href="https://www.chogangroupspa.com" rel="noopener">www.chogangroupspa.com</a>.
   </div>
@@ -24,29 +24,37 @@
   <div class="contenitore testata-riga">
     <a class="marchio" href="index.html">
       <span class="nome">Puliderma</span>
-      <span class="qualifica">Incaricato Indipendente Chogan</span>
+      <span class="qualifica">Negozio online · Incaricato Indipendente Chogan</span>
     </a>
-    <nav class="menu">
-      <a href="index.html">Home</a>
-      <a href="catalogo.html">Catalogo</a>
-      <a href="aziende.html" class="attiva">Per le aziende</a>
-      <a href="tesserino.html">Tesserino</a>
-    </nav>
+    <form class="cerca" action="negozio.html" role="search">
+      <input type="search" name="q" placeholder="Cerca tra i prodotti (nome o codice)…" autocomplete="off" aria-label="Cerca un prodotto">
+      <button type="submit" aria-label="Cerca"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+    </form>
+    <div class="azioni-testata">
+      <a class="btn-carrello" href="negozio.html#carrello" data-apri-carrello>
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg> Carrello <span class="conta" data-conta-carrello>0</span>
+      </a>
+    </div>
   </div>
 </header>
+<nav class="striscia-reparti" aria-label="Reparti">
+  <div class="contenitore riga">
+    <a href="negozio.html">Tutti i prodotti</a><a href="negozio.html#r/altro">Altri articoli</a><a href="negozio.html#r/casa">Casa e pulizia</a><a href="negozio.html#r/cosmesi">Cosmesi e cura della persona</a><a href="negozio.html#r/benessere">Integratori e benessere</a><a href="negozio.html#r/profumi">Profumi</a>
+    <a href="aziende.html">Per le aziende</a>
+  </div>
+</nav>
 
 <main>
   <div class="contenitore">
-
     <p class="occhiello">Per attività commerciali</p>
-    <h1>Vendi questi prodotti nel tuo negozio</h1>
+    <h1 class="titolo-pagina">Vendi questi prodotti nel tuo negozio</h1>
     <p class="sommario">Se hai un'attività nel settore <strong>bellezza, benessere, cura
     della persona, farmacia o parafarmacia</strong>, puoi esporre e vendere questi prodotti
     nel tuo esercizio a condizioni riservate alle aziende, con il tuo scontrino fiscale.
     Non è un accordo con me: è un <strong>contratto tuo diretto con l'azienda produttrice</strong>,
     e io ti faccio da riferimento.</p>
 
-    <h2>Come funziona</h2>
+    <h2 class="titolo-sezione">Come funziona</h2>
     <table class="tabella">
       <tr><th>Chi può</th><td>Attività commerciali dei settori bellezza, benessere, cura della
       persona, farmacie e parafarmacie. Serve la partita IVA: l'iscrizione è come persona
@@ -61,7 +69,7 @@
       preavviso e senza penali. Nessun vincolo di acquisto minimo iniziale.</td></tr>
     </table>
 
-    <h2>Perché può avere senso</h2>
+    <h2 class="titolo-sezione">Perché può avere senso</h2>
     <ul class="elenco">
       <li>Sono prodotti di <strong>consumo</strong>: chi si trova bene ricompra, e la vendita
       si aggiunge al servizio che già offri senza cambiare il tuo lavoro.</li>
@@ -70,38 +78,36 @@
       il posizionamento né temere che il cliente trovi lo stesso prodotto a meno.</li>
     </ul>
 
-    <h2>Parliamone</h2>
+    <h2 class="titolo-sezione">Parliamone</h2>
     <p>Non c'è niente da firmare per fare due domande. Scrivimi e ti spiego esattamente
     cosa comporta, numeri alla mano, prima che tu decida qualsiasi cosa.</p>
-    <div class="gruppo-bottoni">
-      <a class="bottone" href="catalogo.html">Guarda prima il catalogo</a>
+    <div class="gruppo-bottoni" style="margin:18px 0">
+      <a class="bottone" href="negozio.html">Guarda prima il negozio</a>
     </div>
-    <p style="font-size:14.5px;color:var(--inchiostro-tenue)">
+    <p style="font-size:14px;color:var(--tenue)">
       Le condizioni economiche riservate alle aziende non si pubblicano su un sito
       indipendente: te le mostro di persona, sui documenti ufficiali dell'azienda.
     </p>
-
   </div>
 </main>
 
 <footer class="piede">
   <div class="contenitore">
-
     <div class="avvertenza">
       <strong>Chi sono e cosa faccio.</strong> Puliderma è l'attività di
       <strong>Albert Klobucista</strong>, Incaricato Indipendente Chogan alla vendita diretta a domicilio
       ai sensi della <strong>Legge 173/2005</strong> e dell'art. 19 del D.Lgs. 114/1998.
       Non sono un dipendente né un rappresentante di Chogan Group S.p.A. e non parlo a suo nome.
-      I prezzi esposti sono quelli del <strong>listino pubblico ufficiale</strong>.
+      I prezzi esposti sono quelli del <strong>listino pubblico ufficiale</strong>. Su questo
+      sito non si effettuano pagamenti: l'ordine parte via WhatsApp o email e si paga alla consegna.
       <a href="tesserino.html"><strong>Visualizza tesserino venditore</strong></a>
     </div>
-
     <div class="colonne">
       <div>
-        <h4>Il sito</h4>
+        <h4>Il negozio</h4>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="catalogo.html">Catalogo e prezzi</a></li>
+          <li><a href="negozio.html">Tutti i prodotti</a></li>
           <li><a href="aziende.html">Per le aziende</a></li>
           <li><a href="tesserino.html">Tesserino venditore</a></li>
         </ul>
@@ -121,13 +127,33 @@
         </ul>
       </div>
     </div>
-
-    <p style="margin-top:24px">
+    <p class="finale">
       Puliderma · Incaricato Indipendente Chogan · sito indipendente, non ufficiale ·
-      pagina aggiornata il 15/08/2026
+      le foto contrassegnate come «foto illustrativa» sono immagini generate a scopo
+      dimostrativo e non ritraggono il prodotto reale ·
+      pagina aggiornata il 25/08/2026
     </p>
   </div>
 </footer>
+<div class="avviso-aggiunto" data-avviso>Aggiunto al carrello</div>
+<script>
+/* contatore del carrello condiviso fra le pagine (localStorage) */
+(function () {
+  function conta() {
+    var tot = 0;
+    try {
+      var c = JSON.parse(localStorage.getItem('puliderma-carrello') || '{}');
+      Object.keys(c).forEach(function (k) { tot += c[k] || 0; });
+    } catch (e) { /* storage non disponibile: il contatore resta 0 */ }
+    document.querySelectorAll('[data-conta-carrello]').forEach(function (el) {
+      el.textContent = tot;
+    });
+  }
+  conta();
+  window.addEventListener('storage', conta);
+  window.aggiornaContaCarrello = conta;
+})();
+</script>
 
 </body>
 </html>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Puliderma · Incaricato Indipendente Chogan</title>
-<meta name="description" content="Prodotti a prezzo di listino ufficiale, consegnati a mano senza spese di spedizione.">
+<title>Puliderma · Negozio online · Incaricato Indipendente Chogan</title>
+<meta name="description" content="Profumi, cosmesi, pulizia della casa e benessere ai prezzi del listino ufficiale, consegnati a mano.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="stylesheet" href="stile.css">
 </head>
@@ -14,7 +14,7 @@
      OGNI pagina, visibile senza scorrere. Non toglierla, non spostarla in fondo. -->
 <div class="fascia-indipendente">
   <div class="contenitore">
-    <strong>Sito indipendente.</strong> Questo è il sito di un Incaricato Indipendente Chogan alla vendita
+    <strong>Sito indipendente.</strong> Questo è il negozio online di un Incaricato Indipendente Chogan alla vendita
     diretta a domicilio. <strong>Non è il sito ufficiale di Chogan Group S.p.A.</strong> —
     quello si trova su <a href="https://www.chogangroupspa.com" rel="noopener">www.chogangroupspa.com</a>.
   </div>
@@ -24,90 +24,147 @@
   <div class="contenitore testata-riga">
     <a class="marchio" href="index.html">
       <span class="nome">Puliderma</span>
-      <span class="qualifica">Incaricato Indipendente Chogan</span>
+      <span class="qualifica">Negozio online · Incaricato Indipendente Chogan</span>
     </a>
-    <nav class="menu">
-      <a href="index.html" class="attiva">Home</a>
-      <a href="catalogo.html">Catalogo</a>
-      <a href="aziende.html">Per le aziende</a>
-      <a href="tesserino.html">Tesserino</a>
-    </nav>
+    <form class="cerca" action="negozio.html" role="search">
+      <input type="search" name="q" placeholder="Cerca tra i prodotti (nome o codice)…" autocomplete="off" aria-label="Cerca un prodotto">
+      <button type="submit" aria-label="Cerca"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+    </form>
+    <div class="azioni-testata">
+      <a class="btn-carrello" href="negozio.html#carrello" data-apri-carrello>
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg> Carrello <span class="conta" data-conta-carrello>0</span>
+      </a>
+    </div>
   </div>
 </header>
+<nav class="striscia-reparti" aria-label="Reparti">
+  <div class="contenitore riga">
+    <a href="negozio.html">Tutti i prodotti</a><a href="negozio.html#r/altro">Altri articoli</a><a href="negozio.html#r/casa">Casa e pulizia</a><a href="negozio.html#r/cosmesi">Cosmesi e cura della persona</a><a href="negozio.html#r/benessere">Integratori e benessere</a><a href="negozio.html#r/profumi">Profumi</a>
+    <a href="aziende.html">Per le aziende</a>
+  </div>
+</nav>
 
+
+<section class="copertina">
+  <img src="immagini/hero.jpg" alt="">
+  <div class="velo"></div>
+  <div class="contenitore testo">
+    <h1>La spesa di casa e della cura di te, consegnata a mano.</h1>
+    <p>788 prodotti ai prezzi del listino pubblico ufficiale: profumi, cosmesi,
+    pulizia della casa e benessere. Ordini dal sito, te li porto io — senza spese di
+    spedizione, si paga alla consegna.</p>
+    <div class="gruppo-bottoni">
+      <a class="bottone chiaro" href="negozio.html">Sfoglia il negozio</a>
+      <a class="bottone" style="background:transparent;border-color:#fff;color:#fff" href="aziende.html">Per le aziende</a>
+    </div>
+  </div>
+  <span class="nota-foto">foto illustrativa</span>
+</section>
 <main>
   <div class="contenitore">
-
-    <p class="occhiello">Vendita diretta a domicilio</p>
-    <h1>Gli stessi prodotti del sito ufficiale.<br>Te li porto io, senza spedizione.</h1>
-    <p class="sommario">Sono un Incaricato Indipendente Chogan e lavoro nella mia zona: scegli quello che
-    ti serve dal catalogo, me lo dici, e te lo consegno a mano. Il prezzo è quello del
-    listino pubblico ufficiale — quello che pagheresti ordinando da solo — ma senza
-    spese di spedizione e senza aspettare il corriere.</p>
-
-    <div class="gruppo-bottoni">
-      <a class="bottone" href="catalogo.html">Guarda il catalogo · 788 prodotti</a>
-      <a class="bottone secondario" href="aziende.html">Hai un'attività? Leggi qui</a>
+    <h2 class="titolo-sezione">Sfoglia per reparto</h2>
+    <div class="griglia-reparti">
+      <a class="tessera-reparto" href="negozio.html#r/altro">
+        <img src="immagini/reparto-altro.jpg" alt="">
+        <div class="eti"><strong>Altri articoli</strong><span>54 prodotti</span></div>
+      </a>
+      <a class="tessera-reparto" href="negozio.html#r/casa">
+        <img src="immagini/reparto-casa.jpg" alt="">
+        <div class="eti"><strong>Casa e pulizia</strong><span>61 prodotti</span></div>
+      </a>
+      <a class="tessera-reparto" href="negozio.html#r/cosmesi">
+        <img src="immagini/reparto-cosmesi.jpg" alt="">
+        <div class="eti"><strong>Cosmesi e cura della persona</strong><span>233 prodotti</span></div>
+      </a>
+      <a class="tessera-reparto" href="negozio.html#r/benessere">
+        <img src="immagini/reparto-benessere.jpg" alt="">
+        <div class="eti"><strong>Integratori e benessere</strong><span>89 prodotti</span></div>
+      </a>
+      <a class="tessera-reparto" href="negozio.html#r/profumi">
+        <img src="immagini/reparto-profumi.jpg" alt="">
+        <div class="eti"><strong>Profumi</strong><span>351 prodotti</span></div>
+      </a></div>
+    
+    <h2 class="titolo-sezione">In promozione sul listino ufficiale</h2>
+    <p class="sotto-sezione">Prezzi promozionali pubblicati dal listino ufficiale — non sconti nostri.</p>
+    <div class="griglia-prodotti">
+      <a class="card" href="negozio.html#p/MD20" style="text-decoration:none;color:inherit">
+        <div class="foto"><div class="segnaposto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 8l-1.5 12h9L15 8"/><path d="M9.5 8V5.5A1.5 1.5 0 0 1 11 4h2a1.5 1.5 0 0 1 1.5 1.5V8"/><path d="M14.5 5.5L18 4"/><path d="M8 13h8"/></svg><span>MD20</span></div>
+        <span class="eti-promo">In promozione</span></div>
+        <div class="corpo">
+          <span class="codice">MD20</span>
+          <span class="nome-p">Igienplus spray igienizzante mani e superfici</span>
+          <span class="formato">3 ml</span>
+          <div class="riga-prezzo"><span class="prezzo-vecchio">1,20 €</span>
+          <span class="prezzo prezzo-promo">0,60 €</span></div>
+        </div>
+      </a>
+      <a class="card" href="negozio.html#p/TCOV004" style="text-decoration:none;color:inherit">
+        <div class="foto"><div class="segnaposto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="9" width="8" height="12" rx="2.5"/><path d="M10 9V6.5h4V9"/><path d="M9.5 4.5h5"/><path d="M17.5 6.5c1.2.8 2 2.1 2 3.5"/></svg><span>TCOV004</span></div>
+        <span class="eti-promo">In promozione</span></div>
+        <div class="corpo">
+          <span class="codice">TCOV004</span>
+          <span class="nome-p">Cover profumo tascabile</span>
+          <span class="formato">Colore: rosso e verde</span>
+          <div class="riga-prezzo"><span class="prezzo-vecchio">15,00 €</span>
+          <span class="prezzo prezzo-promo">10,50 €</span></div>
+        </div>
+      </a>
+      <a class="card" href="negozio.html#p/TCOV005" style="text-decoration:none;color:inherit">
+        <div class="foto"><div class="segnaposto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="9" width="8" height="12" rx="2.5"/><path d="M10 9V6.5h4V9"/><path d="M9.5 4.5h5"/><path d="M17.5 6.5c1.2.8 2 2.1 2 3.5"/></svg><span>TCOV005</span></div>
+        <span class="eti-promo">In promozione</span></div>
+        <div class="corpo">
+          <span class="codice">TCOV005</span>
+          <span class="nome-p">Cover profumo tascabile</span>
+          <span class="formato">Colore: bianco e turchese</span>
+          <div class="riga-prezzo"><span class="prezzo-vecchio">15,00 €</span>
+          <span class="prezzo prezzo-promo">10,50 €</span></div>
+        </div>
+      </a>
+      <a class="card" href="negozio.html#p/TCOV006" style="text-decoration:none;color:inherit">
+        <div class="foto"><div class="segnaposto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="9" width="8" height="12" rx="2.5"/><path d="M10 9V6.5h4V9"/><path d="M9.5 4.5h5"/><path d="M17.5 6.5c1.2.8 2 2.1 2 3.5"/></svg><span>TCOV006</span></div>
+        <span class="eti-promo">In promozione</span></div>
+        <div class="corpo">
+          <span class="codice">TCOV006</span>
+          <span class="nome-p">Cover profumo tascabile</span>
+          <span class="formato">Colore: verde e giallo</span>
+          <div class="riga-prezzo"><span class="prezzo-vecchio">15,00 €</span>
+          <span class="prezzo prezzo-promo">10,50 €</span></div>
+        </div>
+      </a></div>
+  </div>
+  <div class="striscia-passi">
+    <div class="contenitore griglia">
+      <div class="passo"><h3><span class="num">1</span>Scegli e metti nel carrello</h3>
+        <p>Sfoglia i reparti o cerca per nome e codice. Ogni prezzo è quello del listino
+        pubblico ufficiale, controllabile in ogni momento sul sito ufficiale.</p></div>
+      <div class="passo"><h3><span class="num">2</span>Invia l'ordine</h3>
+        <p>Dal carrello l'ordine parte già scritto via WhatsApp o email. Nessun pagamento
+        online, nessuna carta: qui non si paga.</p></div>
+      <div class="passo"><h3><span class="num">3</span>Te lo porto io</h3>
+        <p>Consegna a mano nella mia zona, senza spese di spedizione e senza ordine
+        minimo. Si paga alla consegna.</p></div>
     </div>
-
-    <h2>Come funziona</h2>
-    <div class="griglia-2">
-      <div class="scheda">
-        <h3>1 · Scegli</h3>
-        <p>Sfoglia il catalogo. Ogni prezzo è quello del listino pubblico ufficiale,
-        controllabile in ogni momento sul <a href="https://www.chogangroupspa.com" rel="noopener">sito
-        ufficiale</a>.</p>
-      </div>
-      <div class="scheda">
-        <h3>2 · Dimmelo</h3>
-        <p>Mi scrivi cosa ti serve. Se hai dubbi su un prodotto te lo spiego: li ho
-        provati, e se non lo conosco te lo dico.</p>
-      </div>
-      <div class="scheda">
-        <h3>3 · Te lo porto</h3>
-        <p>Consegna a mano nella mia zona. Nessuna spesa di spedizione, nessun ordine
-        minimo, si paga alla consegna.</p>
-      </div>
-    </div>
-
-    <h2>Cosa trovi</h2>
-    <div class="griglia-2">
-      <div class="scheda"><h3>Profumi</h3><p>351 prodotti a catalogo.</p></div>
-      <div class="scheda"><h3>Cosmesi e cura della persona</h3><p>233 prodotti a catalogo.</p></div>
-      <div class="scheda"><h3>Integratori e benessere</h3><p>89 prodotti a catalogo.</p></div>
-      <div class="scheda"><h3>Casa e pulizia</h3><p>61 prodotti a catalogo.</p></div>
-      <div class="scheda"><h3>Altri articoli</h3><p>54 prodotti a catalogo.</p></div>
-    </div>
-
-    <h2>Preferisci ordinare da solo?</h2>
-    <p>Va benissimo. Registrati come cliente dal link qui sotto: ordini direttamente dal
-    sito ufficiale e la spedizione arriva a casa tua. Resto comunque il tuo riferimento
-    per consigli e assistenza.</p>
-    <div class="gruppo-bottoni">
-      <a class="bottone secondario" href="https://www.chogangroupspa.com/referral/ALBE2CC86" rel="noopener">Registrati come Cliente</a>
-    </div>
-
   </div>
 </main>
 
 <footer class="piede">
   <div class="contenitore">
-
     <div class="avvertenza">
       <strong>Chi sono e cosa faccio.</strong> Puliderma è l'attività di
       <strong>Albert Klobucista</strong>, Incaricato Indipendente Chogan alla vendita diretta a domicilio
       ai sensi della <strong>Legge 173/2005</strong> e dell'art. 19 del D.Lgs. 114/1998.
       Non sono un dipendente né un rappresentante di Chogan Group S.p.A. e non parlo a suo nome.
-      I prezzi esposti sono quelli del <strong>listino pubblico ufficiale</strong>.
+      I prezzi esposti sono quelli del <strong>listino pubblico ufficiale</strong>. Su questo
+      sito non si effettuano pagamenti: l'ordine parte via WhatsApp o email e si paga alla consegna.
       <a href="tesserino.html"><strong>Visualizza tesserino venditore</strong></a>
     </div>
-
     <div class="colonne">
       <div>
-        <h4>Il sito</h4>
+        <h4>Il negozio</h4>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="catalogo.html">Catalogo e prezzi</a></li>
+          <li><a href="negozio.html">Tutti i prodotti</a></li>
           <li><a href="aziende.html">Per le aziende</a></li>
           <li><a href="tesserino.html">Tesserino venditore</a></li>
         </ul>
@@ -127,13 +184,33 @@
         </ul>
       </div>
     </div>
-
-    <p style="margin-top:24px">
+    <p class="finale">
       Puliderma · Incaricato Indipendente Chogan · sito indipendente, non ufficiale ·
-      pagina aggiornata il 15/08/2026
+      le foto contrassegnate come «foto illustrativa» sono immagini generate a scopo
+      dimostrativo e non ritraggono il prodotto reale ·
+      pagina aggiornata il 25/08/2026
     </p>
   </div>
 </footer>
+<div class="avviso-aggiunto" data-avviso>Aggiunto al carrello</div>
+<script>
+/* contatore del carrello condiviso fra le pagine (localStorage) */
+(function () {
+  function conta() {
+    var tot = 0;
+    try {
+      var c = JSON.parse(localStorage.getItem('puliderma-carrello') || '{}');
+      Object.keys(c).forEach(function (k) { tot += c[k] || 0; });
+    } catch (e) { /* storage non disponibile: il contatore resta 0 */ }
+    document.querySelectorAll('[data-conta-carrello]').forEach(function (el) {
+      el.textContent = tot;
+    });
+  }
+  conta();
+  window.addEventListener('storage', conta);
+  window.aggiornaContaCarrello = conta;
+})();
+</script>
 
 </body>
 </html>

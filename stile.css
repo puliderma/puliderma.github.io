@@ -1,168 +1,356 @@
-/* Puliderma — foglio di stile unico.
-   Nessuna risorsa esterna: niente font, niente CDN, niente tracker.
-   Il sito deve poter essere aperto anche da un file locale. */
 
+/* Puliderma NEGOZIO — foglio di stile v2 (D28).
+   Nessuna risorsa esterna: niente font remoti, niente CDN, niente tracker. */
 :root {
-  --inchiostro: #1c2321;
-  --inchiostro-tenue: #5a6664;
-  --carta: #fbfaf7;
-  --carta-alt: #f2efe9;
-  --verde: #2f6f5e;
-  --verde-chiaro: #e6f0ec;
-  --bordo: #e0dcd3;
-  --avviso: #8a5a12;
-  --avviso-sfondo: #fdf5e6;
-  --ombra: 0 1px 2px rgba(28, 35, 33, .06), 0 8px 24px rgba(28, 35, 33, .05);
-  --raggio: 12px;
+  --inchiostro: #18231f;
+  --tenue: #5d6a66;
+  --carta: #f6f5f0;
+  --bianco: #ffffff;
+  --verde: #245c4c;
+  --verde-cupo: #1c4a3d;
+  --salvia: #e7efea;
+  --salvia-scura: #cfe0d7;
+  --ambra: #a8561d;
+  --ambra-chiara: #fdf2e4;
+  --bordo: #e3dfd6;
+  --ombra: 0 1px 2px rgba(24,35,31,.06), 0 10px 30px rgba(24,35,31,.07);
+  --raggio: 14px;
 }
-
 * { box-sizing: border-box; }
-
+html { scroll-behavior: smooth; }
 body {
-  margin: 0;
+  margin: 0; background: var(--carta); color: var(--inchiostro);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 17px;
-  line-height: 1.6;
-  color: var(--inchiostro);
-  background: var(--carta);
-  -webkit-text-size-adjust: 100%;
+  font-size: 16.5px; line-height: 1.55; -webkit-text-size-adjust: 100%;
 }
+a { color: var(--verde); }
+img { max-width: 100%; display: block; }
+.contenitore { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
 
-.contenitore { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
-
-/* ---- fascia di trasparenza: obbligatoria, sta su OGNI pagina ---- */
+/* ---- fascia di trasparenza § 8.3: obbligatoria su OGNI pagina ---- */
 .fascia-indipendente {
-  background: var(--avviso-sfondo);
-  border-bottom: 1px solid #e8dcc0;
-  color: var(--avviso);
-  font-size: 14px;
-  line-height: 1.45;
-  padding: 10px 0;
+  background: #fdf6e8; border-bottom: 1px solid #ecdfc2; color: #7c5410;
+  font-size: 13px; line-height: 1.45; padding: 8px 0;
 }
-.fascia-indipendente strong { font-weight: 600; }
+.fascia-indipendente a { color: inherit; }
 
-/* ---- testata ---- */
-header.testata { border-bottom: 1px solid var(--bordo); background: #fff; }
+/* ---- testata negozio ---- */
+header.testata {
+  position: sticky; top: 0; z-index: 40; background: var(--bianco);
+  border-bottom: 1px solid var(--bordo);
+}
 .testata-riga {
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 16px; padding: 18px 0; flex-wrap: wrap;
+  display: flex; align-items: center; gap: 18px; padding: 12px 0; flex-wrap: wrap;
 }
-.marchio { text-decoration: none; color: inherit; display: block; }
-.marchio .nome {
-  font-size: 27px; font-weight: 700; letter-spacing: -.02em; line-height: 1.1;
-}
+.marchio { text-decoration: none; color: inherit; line-height: 1.05; }
+.marchio .nome { font-size: 26px; font-weight: 800; letter-spacing: -.03em; display: block; }
+.marchio .nome::after { content: "."; color: var(--verde); }
 .marchio .qualifica {
-  font-size: 12.5px; color: var(--inchiostro-tenue); letter-spacing: .04em;
-  text-transform: uppercase; margin-top: 3px;
+  font-size: 10.5px; color: var(--tenue); letter-spacing: .09em; text-transform: uppercase;
 }
-nav.menu { display: flex; gap: 22px; flex-wrap: wrap; }
-nav.menu a {
-  color: var(--inchiostro); text-decoration: none; font-size: 15.5px; font-weight: 500;
-  padding-bottom: 2px; border-bottom: 2px solid transparent;
+form.cerca { flex: 1 1 320px; display: flex; min-width: 220px; }
+form.cerca input {
+  flex: 1; border: 1.5px solid var(--bordo); border-right: 0; background: var(--carta);
+  border-radius: 999px 0 0 999px; padding: 10px 18px; font-size: 15.5px; color: inherit;
+  font-family: inherit; min-width: 0;
 }
-nav.menu a:hover, nav.menu a.attiva { border-bottom-color: var(--verde); }
+form.cerca input:focus { outline: none; border-color: var(--verde); }
+form.cerca button {
+  border: 1.5px solid var(--verde); background: var(--verde); color: #fff;
+  border-radius: 0 999px 999px 0; padding: 0 20px; font-size: 15px; cursor: pointer;
+}
+.azioni-testata { display: flex; gap: 10px; align-items: center; }
+.btn-carrello {
+  position: relative; display: inline-flex; align-items: center; gap: 8px;
+  border: 1.5px solid var(--bordo); background: var(--bianco); color: inherit;
+  border-radius: 999px; padding: 9px 18px; font-size: 15px; font-weight: 600;
+  text-decoration: none; cursor: pointer; font-family: inherit;
+}
+.btn-carrello:hover { border-color: var(--verde); }
+.btn-carrello .conta {
+  min-width: 21px; height: 21px; border-radius: 999px; background: var(--verde);
+  color: #fff; font-size: 12.5px; font-weight: 700; display: inline-flex;
+  align-items: center; justify-content: center; padding: 0 6px;
+}
+.striscia-reparti { background: var(--verde); }
+.striscia-reparti .riga {
+  display: flex; gap: 4px; overflow-x: auto; padding: 0 12px; scrollbar-width: none;
+}
+.striscia-reparti .riga::-webkit-scrollbar { display: none; }
+.striscia-reparti a {
+  color: #eaf3ee; text-decoration: none; font-size: 14.5px; font-weight: 500;
+  padding: 9px 14px; white-space: nowrap; border-radius: 8px 8px 0 0;
+}
+.striscia-reparti a:hover { background: var(--verde-cupo); color: #fff; }
 
-/* ---- blocchi ---- */
-main { padding: 44px 0 20px; }
-h1 { font-size: 34px; line-height: 1.2; letter-spacing: -.02em; margin: 0 0 14px; }
-h2 { font-size: 23px; line-height: 1.25; margin: 40px 0 12px; }
-h3 { font-size: 18px; margin: 26px 0 8px; }
-p { margin: 0 0 14px; }
-.occhiello {
-  font-size: 13px; text-transform: uppercase; letter-spacing: .08em;
-  color: var(--verde); font-weight: 600; margin-bottom: 8px;
+/* ---- home: copertina ---- */
+.copertina { position: relative; overflow: hidden; background: var(--verde-cupo); }
+.copertina img { width: 100%; height: 420px; object-fit: cover; object-position: right center; }
+.copertina .velo {
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(16,32,26,.82) 0%, rgba(16,32,26,.55) 38%, rgba(16,32,26,0) 68%);
 }
-.sommario { font-size: 19px; color: var(--inchiostro-tenue); max-width: 62ch; }
-
-.griglia-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin: 26px 0; }
-.scheda {
-  background: #fff; border: 1px solid var(--bordo); border-radius: var(--raggio);
-  padding: 20px 22px; box-shadow: var(--ombra);
+.copertina .testo {
+  position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center;
 }
-.scheda h3 { margin-top: 0; }
-.scheda p:last-child { margin-bottom: 0; }
-
+.copertina h1 {
+  color: #fff; font-size: clamp(28px, 4.2vw, 46px); line-height: 1.12;
+  letter-spacing: -.02em; margin: 0 0 14px; max-width: 15ch; text-wrap: balance;
+}
+.copertina p { color: #d9e6df; font-size: 18px; max-width: 44ch; margin: 0 0 22px; }
+.copertina .nota-foto, .nota-foto {
+  font-size: 11px; color: #b9cbc2; letter-spacing: .05em; text-transform: uppercase;
+}
+.copertina .nota-foto { position: absolute; right: 14px; bottom: 10px; }
 .bottone {
   display: inline-block; background: var(--verde); color: #fff; text-decoration: none;
-  padding: 12px 22px; border-radius: 999px; font-weight: 600; font-size: 16px;
-  border: 1px solid var(--verde);
+  padding: 13px 26px; border-radius: 999px; font-weight: 700; font-size: 16px;
+  border: 1.5px solid var(--verde); cursor: pointer; font-family: inherit;
 }
-.bottone:hover { background: #275c4e; }
-.bottone.secondario { background: #fff; color: var(--verde); }
-.bottone.secondario:hover { background: var(--verde-chiaro); }
-.gruppo-bottoni { display: flex; gap: 12px; flex-wrap: wrap; margin: 22px 0; }
+.bottone:hover { background: var(--verde-cupo); border-color: var(--verde-cupo); }
+.bottone.chiaro { background: #fff; color: var(--verde); border-color: #fff; }
+.bottone.chiaro:hover { background: var(--salvia); border-color: var(--salvia); }
+.bottone.secondario { background: transparent; color: var(--verde); border-color: var(--verde); }
+.bottone.secondario:hover { background: var(--salvia); }
+.gruppo-bottoni { display: flex; gap: 12px; flex-wrap: wrap; }
 
-/* ---- catalogo ---- */
-.barra-filtri {
-  position: sticky; top: 0; z-index: 5; background: var(--carta);
-  padding: 14px 0; border-bottom: 1px solid var(--bordo); margin-bottom: 22px;
+/* ---- blocchi comuni ---- */
+main { padding: 34px 0 10px; }
+h2.titolo-sezione { font-size: 24px; letter-spacing: -.015em; margin: 38px 0 6px; }
+h2.titolo-sezione:first-child { margin-top: 0; }
+p.sotto-sezione { color: var(--tenue); margin: 0 0 18px; }
+.occhiello {
+  font-size: 12px; text-transform: uppercase; letter-spacing: .1em;
+  color: var(--verde); font-weight: 700; margin: 0 0 6px;
 }
-.barra-filtri .riga { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
-#cerca {
-  flex: 1 1 240px; min-width: 200px; padding: 11px 14px; font-size: 16px;
-  border: 1px solid var(--bordo); border-radius: 10px; background: #fff; color: inherit;
-}
-.filtro {
-  padding: 8px 15px; border-radius: 999px; border: 1px solid var(--bordo);
-  background: #fff; font-size: 14.5px; cursor: pointer; color: var(--inchiostro-tenue);
-  font-family: inherit;
-}
-.filtro.attivo { background: var(--verde); border-color: var(--verde); color: #fff; }
-#conteggio { font-size: 14.5px; color: var(--inchiostro-tenue); margin-bottom: 14px; }
 
-.griglia-prodotti { display: grid; grid-template-columns: repeat(auto-fill, minmax(235px, 1fr)); gap: 14px; }
-.prodotto {
-  background: #fff; border: 1px solid var(--bordo); border-radius: var(--raggio);
-  padding: 16px 17px; display: flex; flex-direction: column; gap: 5px;
+/* ---- tessere reparto ---- */
+.griglia-reparti {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px; margin: 18px 0 8px;
 }
-.prodotto .codice {
-  font-size: 11.5px; letter-spacing: .07em; color: var(--inchiostro-tenue);
+.tessera-reparto {
+  display: block; text-decoration: none; color: inherit; background: var(--bianco);
+  border: 1px solid var(--bordo); border-radius: var(--raggio); overflow: hidden;
+  box-shadow: var(--ombra); transition: transform .15s ease;
+}
+.tessera-reparto:hover { transform: translateY(-3px); }
+.tessera-reparto img, .tessera-reparto .finto { width: 100%; height: 140px; object-fit: cover; }
+.tessera-reparto .finto { background: linear-gradient(135deg, var(--salvia), var(--salvia-scura)); }
+.tessera-reparto .eti { padding: 12px 15px 13px; }
+.tessera-reparto .eti strong { display: block; font-size: 16px; }
+.tessera-reparto .eti span { font-size: 13.5px; color: var(--tenue); }
+
+/* ---- griglia prodotti / card ---- */
+.griglia-prodotti {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 16px; margin: 18px 0;
+}
+.card {
+  background: var(--bianco); border: 1px solid var(--bordo); border-radius: var(--raggio);
+  overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--ombra);
+  transition: transform .15s ease; position: relative; cursor: pointer;
+}
+.card:hover { transform: translateY(-3px); }
+.card .foto { position: relative; aspect-ratio: 1/1; background: var(--salvia); }
+.card .foto img { width: 100%; height: 100%; object-fit: cover; }
+.card .foto .segnaposto {
+  position: absolute; inset: 0; display: flex; flex-direction: column; gap: 8px;
+  align-items: center; justify-content: center; color: var(--verde);
+  background: linear-gradient(150deg, var(--salvia) 0%, var(--salvia-scura) 100%);
+}
+.card .foto .segnaposto svg { width: 44px; height: 44px; opacity: .8; }
+.card .foto .segnaposto span {
+  font-size: 11px; letter-spacing: .08em; color: var(--tenue);
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
-.prodotto .nome { font-weight: 600; font-size: 16px; line-height: 1.35; }
-.prodotto .formato { font-size: 14px; color: var(--inchiostro-tenue); }
-.prodotto .prezzo { font-size: 21px; font-weight: 700; margin-top: auto; padding-top: 10px; }
-.prodotto .nota-prezzo { font-size: 12.5px; color: var(--inchiostro-tenue); }
-
-/* ---- tesserino ---- */
-.tesserino {
-  max-width: 460px; background: #fff; border: 1px solid var(--bordo);
-  border-radius: var(--raggio); box-shadow: var(--ombra); padding: 26px 28px; margin: 24px 0;
+.card .eti-promo, .eti-promo {
+  position: absolute; top: 10px; left: 10px; background: var(--ambra); color: #fff;
+  font-size: 11.5px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+  padding: 3px 9px; border-radius: 999px;
 }
-.tesserino dl { display: grid; grid-template-columns: auto 1fr; gap: 8px 18px; margin: 0; }
-.tesserino dt { font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: var(--inchiostro-tenue); }
-.tesserino dd { margin: 0; font-weight: 600; }
-
-.da-compilare {
-  background: var(--avviso-sfondo); border: 1px dashed #d8c08a; color: var(--avviso);
-  border-radius: 8px; padding: 3px 9px; font-size: 14px; font-weight: 600;
+.card .eti-foto {
+  position: absolute; right: 8px; bottom: 6px; font-size: 10px; letter-spacing: .05em;
+  text-transform: uppercase; color: rgba(255,255,255,.9);
+  background: rgba(24,35,31,.45); padding: 2px 7px; border-radius: 999px;
 }
+.card .corpo { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
+.card .codice {
+  font-size: 11px; letter-spacing: .07em; color: var(--tenue);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+.card .nome-p {
+  font-weight: 600; font-size: 15px; line-height: 1.35;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  min-height: 2.7em;
+}
+.card .formato { font-size: 13.5px; color: var(--tenue); }
+.card .riga-prezzo { margin-top: auto; padding-top: 8px; display: flex; align-items: baseline; gap: 8px; }
+.prezzo { font-size: 20px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.prezzo-vecchio { font-size: 14px; color: var(--tenue); text-decoration: line-through; font-variant-numeric: tabular-nums; }
+.prezzo-promo { color: var(--ambra); }
+.card .aggiungi {
+  margin-top: 9px; border: 1.5px solid var(--verde); background: var(--bianco);
+  color: var(--verde); font-weight: 700; font-size: 14px; border-radius: 999px;
+  padding: 8px 0; cursor: pointer; font-family: inherit; transition: background .12s;
+}
+.card .aggiungi:hover { background: var(--verde); color: #fff; }
 
-table.tabella { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 15.5px; }
-table.tabella th, table.tabella td { text-align: left; padding: 11px 12px; border-bottom: 1px solid var(--bordo); vertical-align: top; }
-table.tabella th { font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: var(--inchiostro-tenue); }
+/* ---- barra strumenti catalogo ---- */
+.barra-strumenti {
+  position: sticky; top: 0; z-index: 30; background: var(--carta);
+  border-bottom: 1px solid var(--bordo); padding: 12px 0; margin-bottom: 4px;
+}
+.barra-strumenti .riga { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.filtro {
+  padding: 8px 15px; border-radius: 999px; border: 1.5px solid var(--bordo);
+  background: var(--bianco); font-size: 14px; cursor: pointer; color: var(--tenue);
+  font-family: inherit; font-weight: 500;
+}
+.filtro.attivo { background: var(--verde); border-color: var(--verde); color: #fff; }
+select.ordina {
+  margin-left: auto; border: 1.5px solid var(--bordo); border-radius: 999px;
+  background: var(--bianco); padding: 8px 14px; font-size: 14px; color: inherit; font-family: inherit;
+}
+#conteggio { font-size: 14px; color: var(--tenue); margin: 10px 0 0; }
+.niente { text-align: center; color: var(--tenue); padding: 60px 0; }
 
+/* ---- scheda prodotto (sovrapposta) ---- */
+.velo-scuro {
+  position: fixed; inset: 0; background: rgba(20,28,25,.55); z-index: 60;
+  display: none; align-items: flex-start; justify-content: center; padding: 4vh 16px; overflow-y: auto;
+}
+.velo-scuro.aperto { display: flex; }
+.scheda-panello {
+  background: var(--bianco); border-radius: 18px; max-width: 880px; width: 100%;
+  box-shadow: 0 30px 80px rgba(0,0,0,.3); overflow: hidden; position: relative;
+  display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+}
+.scheda-panello .lato-foto { position: relative; background: var(--salvia); min-height: 320px; }
+.scheda-panello .lato-foto img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+.scheda-panello .lato-foto .segnaposto {
+  position: absolute; inset: 0; display: flex; flex-direction: column; gap: 10px;
+  align-items: center; justify-content: center; color: var(--verde);
+  background: linear-gradient(150deg, var(--salvia) 0%, var(--salvia-scura) 100%);
+}
+.scheda-panello .lato-foto .segnaposto svg { width: 64px; height: 64px; opacity: .8; }
+.scheda-panello .lato-info { padding: 26px 28px 24px; display: flex; flex-direction: column; gap: 10px; }
+.scheda-panello .chiudi {
+  position: absolute; top: 12px; right: 12px; z-index: 2; width: 36px; height: 36px;
+  border-radius: 999px; border: 0; background: rgba(24,35,31,.55); color: #fff;
+  font-size: 19px; cursor: pointer; line-height: 1;
+}
+.scheda-panello h3 { margin: 4px 0 0; font-size: 22px; line-height: 1.25; letter-spacing: -.01em; }
+.scheda-panello .meta { font-size: 14px; color: var(--tenue); }
+.scheda-panello .riga-prezzo { display: flex; align-items: baseline; gap: 10px; margin: 6px 0; }
+.scheda-panello .prezzo { font-size: 30px; }
+.nota-box {
+  background: var(--salvia); border-radius: 10px; padding: 11px 14px; font-size: 13.5px;
+  color: var(--inchiostro);
+}
+ul.dettagli { list-style: none; margin: 4px 0 0; padding: 0; font-size: 13.5px; }
+ul.dettagli li {
+  display: flex; justify-content: space-between; gap: 14px; padding: 6px 0;
+  border-bottom: 1px dashed var(--bordo);
+}
+ul.dettagli li span { color: var(--tenue); white-space: nowrap; }
+ul.dettagli li strong { text-align: right; font-weight: 600; }
+.nota-domande { font-size: 13px; color: var(--tenue); margin: 8px 0 0; }
+.quantita { display: flex; align-items: center; gap: 0; border: 1.5px solid var(--bordo);
+  border-radius: 999px; width: max-content; overflow: hidden; }
+.quantita button {
+  width: 40px; height: 40px; border: 0; background: var(--bianco); font-size: 19px;
+  cursor: pointer; color: var(--verde); font-family: inherit;
+}
+.quantita span { min-width: 34px; text-align: center; font-weight: 700; font-variant-numeric: tabular-nums; }
+.scheda-panello .azioni { display: flex; gap: 12px; align-items: center; margin-top: 6px; flex-wrap: wrap; }
+
+/* ---- carrello (cassetto) ---- */
+.cassetto {
+  position: fixed; top: 0; right: 0; bottom: 0; width: min(430px, 100%); z-index: 70;
+  background: var(--bianco); box-shadow: -18px 0 50px rgba(0,0,0,.25);
+  transform: translateX(105%); transition: transform .22s ease; display: flex; flex-direction: column;
+}
+.cassetto.aperto { transform: translateX(0); }
+.cassetto header {
+  padding: 18px 20px; border-bottom: 1px solid var(--bordo); display: flex;
+  align-items: center; justify-content: space-between;
+}
+.cassetto header h3 { margin: 0; font-size: 19px; }
+.cassetto .righe { flex: 1; overflow-y: auto; padding: 8px 20px; }
+.riga-carrello { display: flex; gap: 12px; padding: 13px 0; border-bottom: 1px solid var(--bordo); }
+.riga-carrello .info { flex: 1; min-width: 0; }
+.riga-carrello .nome-p { font-size: 14px; font-weight: 600; line-height: 1.3; }
+.riga-carrello .dett { font-size: 12.5px; color: var(--tenue); }
+.riga-carrello .quantita { transform: scale(.85); transform-origin: left center; margin-top: 4px; }
+.riga-carrello .lato { text-align: right; }
+.riga-carrello .prezzo { font-size: 15px; }
+.riga-carrello .togli {
+  border: 0; background: none; color: var(--tenue); font-size: 12.5px;
+  cursor: pointer; text-decoration: underline; font-family: inherit; padding: 0; margin-top: 6px;
+}
+.cassetto footer { padding: 16px 20px 20px; border-top: 1px solid var(--bordo); }
+.cassetto .totale { display: flex; justify-content: space-between; font-size: 18px; font-weight: 800; margin-bottom: 6px; }
+.cassetto .nota-pagamento { font-size: 12.5px; color: var(--tenue); margin: 0 0 12px; }
+.cassetto .gruppo-bottoni { flex-direction: column; }
+.cassetto .bottone { text-align: center; }
+.carrello-vuoto { text-align: center; color: var(--tenue); padding: 50px 10px; }
+
+/* ---- avviso aggiunto ---- */
+.avviso-aggiunto {
+  position: fixed; left: 50%; bottom: 26px; transform: translateX(-50%) translateY(20px);
+  background: var(--inchiostro); color: #fff; padding: 11px 22px; border-radius: 999px;
+  font-size: 14.5px; opacity: 0; pointer-events: none; transition: all .2s ease; z-index: 80;
+}
+.avviso-aggiunto.mostra { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ---- strisce home ---- */
+.striscia-passi { background: var(--bianco); border-top: 1px solid var(--bordo); border-bottom: 1px solid var(--bordo); margin-top: 44px; }
+.striscia-passi .griglia { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 26px; padding: 34px 0; }
+.passo h3 { margin: 0 0 6px; font-size: 16.5px; display: flex; gap: 10px; align-items: center; }
+.passo h3 .num {
+  width: 28px; height: 28px; border-radius: 999px; background: var(--salvia); color: var(--verde);
+  display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800;
+}
+.passo p { margin: 0; font-size: 14.5px; color: var(--tenue); }
+
+/* ---- tabelle e liste (pagine informative) ---- */
+table.tabella { width: 100%; border-collapse: collapse; margin: 18px 0; font-size: 15.5px; background: var(--bianco); border-radius: var(--raggio); overflow: hidden; box-shadow: var(--ombra); }
+table.tabella th, table.tabella td { text-align: left; padding: 13px 16px; border-bottom: 1px solid var(--bordo); vertical-align: top; }
+table.tabella tr:last-child th, table.tabella tr:last-child td { border-bottom: 0; }
+table.tabella th { font-size: 12.5px; text-transform: uppercase; letter-spacing: .05em; color: var(--tenue); width: 160px; }
 ul.elenco { margin: 0 0 16px; padding-left: 22px; }
 ul.elenco li { margin-bottom: 7px; }
+.tesserino {
+  max-width: 480px; background: var(--bianco); border: 1px solid var(--bordo);
+  border-radius: var(--raggio); box-shadow: var(--ombra); padding: 24px 26px; margin: 22px 0;
+}
+.tesserino dl { display: grid; grid-template-columns: auto 1fr; gap: 8px 18px; margin: 0; }
+.tesserino dt { font-size: 12.5px; text-transform: uppercase; letter-spacing: .05em; color: var(--tenue); }
+.tesserino dd { margin: 0; font-weight: 600; }
+.sommario { font-size: 18px; color: var(--tenue); max-width: 64ch; }
+h1.titolo-pagina { font-size: 32px; letter-spacing: -.02em; margin: 0 0 10px; }
 
 /* ---- piede ---- */
-footer.piede {
-  margin-top: 60px; border-top: 1px solid var(--bordo); background: var(--carta-alt);
-  padding: 34px 0 44px; font-size: 14.5px; color: var(--inchiostro-tenue);
-}
-footer.piede a { color: var(--verde); }
+footer.piede { margin-top: 56px; background: #1f2c27; color: #b9c6c0; padding: 38px 0 44px; font-size: 14px; }
+footer.piede a { color: #cfe0d7; }
 footer.piede .avvertenza {
-  background: #fff; border: 1px solid var(--bordo); border-radius: 10px;
-  padding: 16px 18px; margin-bottom: 20px; color: var(--inchiostro);
+  background: #273630; border: 1px solid #33453d; border-radius: 12px;
+  padding: 16px 18px; margin-bottom: 24px; color: #dbe6e0;
 }
-footer.piede .colonne { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px; }
-footer.piede h4 { font-size: 13px; text-transform: uppercase; letter-spacing: .05em; margin: 0 0 8px; color: var(--inchiostro); }
+footer.piede .colonne { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 24px; }
+footer.piede h4 { font-size: 12px; text-transform: uppercase; letter-spacing: .07em; margin: 0 0 10px; color: #fff; }
 footer.piede ul { list-style: none; margin: 0; padding: 0; }
-footer.piede li { margin-bottom: 6px; }
+footer.piede li { margin-bottom: 7px; }
+footer.piede .finale { margin-top: 26px; font-size: 13px; color: #8fa19a; }
 
-@media (max-width: 640px) {
-  h1 { font-size: 27px; }
-  main { padding-top: 30px; }
-  .testata-riga { padding: 14px 0; }
-  nav.menu { gap: 16px; }
+@media (max-width: 720px) {
+  .copertina img { height: 340px; }
+  .scheda-panello { grid-template-columns: 1fr; }
+  .scheda-panello .lato-foto { min-height: 240px; }
+  .testata-riga { gap: 10px; }
+  form.cerca { order: 3; flex-basis: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
 }
